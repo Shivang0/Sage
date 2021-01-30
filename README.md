@@ -21,7 +21,7 @@ Following usage example show simplest tasks you can acomplish with `Sage`.
 Please update you GitHub Login credentials in `cred.py` file.
 Make sure you do not have two-factor authentication (2FA) turned ON. This may cause issues for tool to run.
 
-Credentials are reuired to use the tool or else the tool will not run.
+Credentials are required to use the tool or else the tool will not run.
 
 # ORGANIZATION'S NAME
 
