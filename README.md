@@ -1,6 +1,8 @@
 # Sage
 Sage - Fast Scraping Tool to quicly find all S3 Buckets from an organizations GitHub Repositories and find S3 Bucket Takeover.
 
+![alt_text](https://github.com/notmarshmllow/Sage/blob/main/image.png)
+
 # INSTALLATION
 
 Requirement: Python: 3.7+
