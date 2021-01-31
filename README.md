@@ -8,8 +8,9 @@ Sage - Fast Scraping Tool to quicly find all S3 Buckets from organization's GitH
 Requirement: Python: 3.7+
 
 1. `git clone https://github.com/notmarshmllow/sage.git`
-2. `pip install -r requirements.txt`
-3. `python3 sage.py -h`
+2. `cd Sage` 
+3. `pip install -r requirements.txt`
+4. `python3 sage.py -h`
 
 # USAGE
 Sage takes the name of the organization and tries to find all S3 Buckets in the Orgnization's GitHub Repositories.
