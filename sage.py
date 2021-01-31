@@ -1,7 +1,6 @@
 import urllib
 import urllib.request
 from bs4 import BeautifulSoup
-import scrapy
 import requests
 from bs4 import BeautifulSoup
 from urlextract import URLExtract
@@ -12,7 +11,6 @@ import argparse
 import sys
 from colorama import init
 from termcolor import colored
-import urllib
 import random
 
 
@@ -47,6 +45,7 @@ def banner():
     Developed by @notmarshmllow
     ''')
 
+banner()
 
 with requests.Session() as s:
     url = 'https://github.com/session'
@@ -68,10 +67,10 @@ pages=int(pages)
 random_text = ['get yourself some coffee.', 'take a nap.', 'have some tea.', 'get some food.', 'play a game.', 'take a break.', 'read a blog.', 'star me on GitHub ;)']
 
 
+z = random.choice(random_text)
+print(f'\nFetching all repositories of {organization}. By the time, you might {z}')
+
 def main():
-    banner()
-    z = random.choice(random_text)
-    print(f'\nFetching all repositories of {organization}. By the time, you might {z}')
     x = 1
     while x <= pages:
         url_org = f'https://github.com/search?p={x}&q=org%3A{organization}+{query}&type=code'
@@ -87,12 +86,8 @@ def main():
             inside_file = link.get('href')
             if f'/{organization}/' in inside_file:
                 full_url = 'https://github.com' + inside_file
-                response = s.get(full_url)  
-                url_content = response.content
-                url_content = str(url_content)
-                if 's3.amazonaws.com' in url_content:
-                    head = full_url.partition('#')
-                    url_list.append(head[0])
+                head = full_url.partition('#')
+                url_list.append(head[0])
                 
         final_url_list = set(url_list)
         final_url_list = list(final_url_list)
